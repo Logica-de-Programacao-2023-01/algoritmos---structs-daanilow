@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	p := Livro{autor: "Danilo", titulo: "As aventuras de Pi", anodepublicacao: 2005}
+	InformacoesLivro(p)
+
+}
+
+type Livro struct {
+	titulo          string
+	autor           string
+	anodepublicacao int
+}
+
+func InformacoesLivro(p Livro) {
+	fmt.Println("Autor:", p.autor)
+	fmt.Println("Titulo:", p.titulo)
+	fmt.Println("Ano de Publicação:", p.anodepublicacao)
+
+}
