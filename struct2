@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	p := Pessoa{nome: "Danilo", idade: 18, endereco: Endereco{rua: "SQS 409", numero: 37, cidade: "Brasília", estado: "Distrito Federal"}}
+	InformacoesPessoa(p)
+	
+}
+
+type Pessoa struct {
+	nome     string
+	idade    int
+	endereco Endereco
+}
+
+type Endereco struct {
+	rua    string
+	numero int
+	cidade string
+	estado string
+}
+
+func InformacoesPessoa(p Pessoa) {
+	fmt.Println("Rua:", p.endereco.rua)
+	fmt.Println("Número:", p.endereco.numero)
+	fmt.Println("Cidade:", p.endereco.cidade)
+	fmt.Println("Estado:", p.endereco.estado)
+
+}
