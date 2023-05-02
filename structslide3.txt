@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func main() {
+	p := Aluno{nome: "Danilo", idade: 18, notas: []float64{10.0, 8.0, 7.0}}
+	media := InformacoesAluno(p)
+	fmt.Println("Media notas", media)
+
+}
+
+type Aluno struct {
+	nome  string
+	idade int
+	notas []float64
+}
+
+func InformacoesAluno(p Aluno) (media float64) {
+
+	fmt.Println("Nome:", p.nome)
+	fmt.Println("Idade:", p.idade)
+	fmt.Println("Notas:", p.notas)
+
+	totalnotas := 0.0
+	for _, valorNota := range p.notas {
+		totalnotas += valorNota
+	}
+	media = 0.0
+	media = totalnotas / float64(len(p.notas))
+
+	return media
+
+}
