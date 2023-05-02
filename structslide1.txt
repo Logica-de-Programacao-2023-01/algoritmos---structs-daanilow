@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	retangulo := Retangulo{5.0, 5.0}
+
+	calc := CalcularArea(retangulo)
+
+	fmt.Println("Area do retangulo", calc)
+}
+
+type Retangulo struct {
+	largura float64
+	altura  float64
+}
+
+func CalcularArea(p Retangulo) (area float64) {
+
+	largura := p.largura
+	altura := p.altura
+
+	return largura * altura
+}
